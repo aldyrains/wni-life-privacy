@@ -4,44 +4,128 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kebijakan Privasi · WNI Life Simulator</title>
+<meta name="description" content="Kebijakan privasi WNI Life Simulator (com.aldiriansyah.wnilife): data apa yang dipakai aplikasi dan bagaimana data itu ditangani.">
+<link rel="canonical" href="https://aldyrains.github.io/wni-life-privacy/">
+<meta name="theme-color" content="#0b0a09">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<!-- Gaya bersama dari situs utama (aldyrains.github.io/assets/style.css). -->
+<link rel="stylesheet" href="/assets/style.css">
 <style>
-  :root { --paper: #f6efdc; --ink: #2e2118; --soft: #5c4636; --line: #d9c49a; --accent: #8a4b2f; }
-  @media (prefers-color-scheme: dark) {
-    :root { --paper: #1c1714; --ink: #ece2d0; --soft: #c9b8a1; --line: #4a3d33; --accent: #e0a07a; }
+  /* Cadangan kalau gaya utama gagal dimuat: tetap terbaca. */
+  body { background: #0b0a09; color: #ede7db; font-family: system-ui, sans-serif; }
+
+  .topbar.flat { position: relative; border-bottom: 1px solid var(--line); }
+  .doc-head { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+  .doc-head .crumbs { margin-bottom: 28px; }
+  .doc-head .display { font-size: clamp(2.5rem, 7vw, 5.4rem); }
+  .doc-head .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px; }
+  .doc-head .lang { margin-top: 22px; color: var(--soft); }
+  .doc-head .lang a { color: var(--gold); text-underline-offset: 3px; }
+
+  .doc { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 64px; padding-top: 64px; padding-bottom: 96px; }
+  .toc { position: sticky; top: 24px; align-self: start; }
+  .toc .mono.label { display: block; margin-bottom: 14px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .toc li a { display: grid; grid-template-columns: 30px 1fr; gap: 4px; padding: 9px 0; border-bottom: 1px solid var(--line);
+    color: var(--soft); text-decoration: none; font-size: 13px; line-height: 1.35; }
+  .toc li a .mono { color: var(--dim); padding-top: 1px; }
+  .toc li a:hover { color: var(--ink); }
+  .toc li a:hover .mono { color: var(--gold); }
+
+  .prose { max-width: 68ch; }
+  .prose > p:first-child { font: 400 clamp(1.35rem, 2.4vw, 1.7rem)/1.3 var(--serif); color: var(--ink); }
+  .prose h2 { font: 400 clamp(1.6rem, 3vw, 2.1rem)/1.1 var(--serif); margin: 56px 0 14px; padding-top: 22px;
+    border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+  .prose p, .prose li { color: var(--soft); font-size: 15px; line-height: 1.75; }
+  .prose p + p { margin-top: 14px; }
+  .prose ul { margin: 12px 0 14px; padding-left: 0; list-style: none; }
+  .prose ul li { position: relative; padding-left: 22px; margin: 6px 0; }
+  .prose ul li::before { content: ""; position: absolute; left: 4px; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+  .prose a { color: var(--gold); text-decoration-color: rgb(231 194 124 / 40%); text-underline-offset: 3px; word-break: break-word; }
+  .prose a:hover { text-decoration-color: var(--gold); }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  .english { margin-top: 88px; padding-top: 48px; border-top: 1px solid var(--line-2); scroll-margin-top: 20px; }
+  .english h2.en-title { border: 0; padding: 0; margin: 0 0 8px; font-size: clamp(2rem, 4vw, 3rem); }
+  .english .meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 28px; }
+
+  @media (max-width: 900px) {
+    .doc { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 40px; }
+    .toc { position: static; }
   }
-  body { margin: 0; background: var(--paper); color: var(--ink);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { font-size: 1.6rem; margin: 0 0 4px; }
-  h2 { font-size: 1.15rem; margin: 28px 0 6px; color: var(--accent); }
-  p, li { color: var(--ink); }
-  .meta { color: var(--soft); margin: 0 0 24px; }
-  hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
-  a { color: var(--accent); }
-  ul { padding-left: 1.2rem; }
+  @media (max-width: 640px) {
+    .doc-head { padding: 48px 0 40px; }
+  }
 </style>
 </head>
 <body>
-<main>
-<h1>Kebijakan Privasi WNI Life Simulator</h1>
-<p class="meta">Berlaku sejak 17 Oktober 2026 · Diperbarui 20 November 2026 · Aplikasi: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
+<a class="skip" href="#isi">Langsung ke isi</a>
 
+<header class="topbar flat">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Aldi Riansyah, beranda">
+      <img src="/assets/logo.webp" width="32" height="32" alt="">
+      <span><b>Aldi Riansyah</b><br><span class="mono">Developer game indie</span></span>
+    </a>
+    <a class="mono tag" href="/games/wni-life/" style="text-decoration:none">WNI Life Simulator ↗</a>
+  </div>
+</header>
+
+<header class="doc-head">
+  <div class="wrap">
+    <nav class="crumbs mono" aria-label="Lokasi halaman">
+      <a href="/">Aldi Riansyah</a><span aria-hidden="true">/</span>
+      <a href="/games/wni-life/">WNI Life</a><span aria-hidden="true">/</span>
+      <span>Privasi</span>
+    </nav>
+    <h1 class="display">Kebijakan Privasi<br><em>WNI Life Simulator</em></h1>
+    <p class="meta"><span class="mono tag-pill">Berlaku sejak 17 Oktober 2026</span><span class="mono tag-pill">Diperbarui 20 November 2026</span><span class="mono tag-pill">Aplikasi: WNI Life Simulator (com.aldiriansyah.wnilife)</span></p>
+    <p class="lang">English version: <a href="#english">Privacy Policy (English) ↓</a></p>
+  </div>
+</header>
+
+<main id="isi">
+  <div class="wrap doc">
+    <nav class="toc" aria-label="Daftar isi">
+      <span class="mono label">Daftar isi</span>
+      <ol>
+      <li><a href="#b1"><span class="mono">01</span>Tanpa akun dan tanpa data pribadi</a></li>
+      <li><a href="#b2"><span class="mono">02</span>Simpanan permainan di perangkat</a></li>
+      <li><a href="#b3"><span class="mono">03</span>Iklan (Google AdMob)</a></li>
+      <li><a href="#b4"><span class="mono">04</span>Pembelian (Google Play)</a></li>
+      <li><a href="#b5"><span class="mono">05</span>Laporan crash dan analitik (Google Firebase)</a></li>
+      <li><a href="#b6"><span class="mono">06</span>Notifikasi pengingat</a></li>
+      <li><a href="#b7"><span class="mono">07</span>Data tidak dijual</a></li>
+      <li><a href="#b8"><span class="mono">08</span>Anak-anak</a></li>
+      <li><a href="#b9"><span class="mono">09</span>Keamanan</a></li>
+      <li><a href="#b10"><span class="mono">10</span>Perubahan kebijakan</a></li>
+      <li><a href="#b11"><span class="mono">11</span>Kontak</a></li>
+      <li><a href="#english"><span class="mono">EN</span>Privacy Policy (English)</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
 <p>Kebijakan ini menjelaskan data apa yang digunakan oleh permainan WNI Life Simulator
 ("aplikasi") yang dibuat oleh aldyrains ("kami"), dan bagaimana data itu ditangani.</p>
 
-<h2>1. Tanpa akun dan tanpa data pribadi</h2>
+<h2 id="b1">1. Tanpa akun dan tanpa data pribadi</h2>
 <p>Aplikasi tidak memakai akun dan tidak meminta nama asli, email, nomor HP, lokasi,
 kontak, foto, kamera, maupun mikrofon. Nama tokoh di dalam permainan adalah rekaan
 yang kamu buat atau yang diundi permainan.</p>
 
-<h2>2. Simpanan permainan di perangkat</h2>
+<h2 id="b2">2. Simpanan permainan di perangkat</h2>
 <p>Simpanan hidup, koleksi gelar, prestasi, dan pengaturan disimpan hanya di perangkatmu.
 Kami tidak menerima, mengirim, atau menyimpan data permainanmu di server mana pun.
 Data ini terhapus bila aplikasi atau datanya dihapus. Bila fitur cadangan Android
 (Google) aktif di perangkatmu, salinan simpanan dapat ikut tercadang oleh Google sesuai
 pengaturan perangkatmu.</p>
 
-<h2>3. Iklan (Google AdMob)</h2>
+<h2 id="b3">3. Iklan (Google AdMob)</h2>
 <p>Aplikasi menampilkan iklan dari Google AdMob. Untuk menayangkan, membatasi frekuensi,
 dan mengukur iklan serta mencegah penipuan, AdMob dapat mengumpulkan dan memproses:</p>
 <ul>
@@ -58,13 +142,13 @@ sukarela. Iklan spanduk dan layar penuh tidak tampil bagi pemilik Paket Sultan.<
 <p>Cara Google menggunakan data dari aplikasi mitra:
 <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
 
-<h2>4. Pembelian (Google Play)</h2>
+<h2 id="b4">4. Pembelian (Google Play)</h2>
 <p>Pembayaran Paket Sultan, Mesin Waktu, dan traktiran diproses sepenuhnya oleh Google Play.
 Aplikasi hanya menerima status pembelian (produk apa yang dimiliki) untuk membuka isinya,
 bukan data kartu, rekening, atau identitas pembayaranmu. Status pembelian disimpan di
 perangkat dan dapat dipulihkan dari akun Google Play-mu.</p>
 
-<h2>5. Laporan crash dan analitik (Google Firebase)</h2>
+<h2 id="b5">5. Laporan crash dan analitik (Google Firebase)</h2>
 <p>Untuk menemukan bug dan memahami fitur mana yang dipakai, aplikasi memakai Firebase
 Crashlytics, Firebase Performance Monitoring, dan Google Analytics for Firebase. Layanan ini dapat mengumpulkan dan memproses:</p>
 <ul>
@@ -82,7 +166,7 @@ Cara Google menangani data Firebase:
 <p>Selain itu, catatan error singkat juga disimpan di perangkat dan hanya terkirim bila kamu
 sendiri memilih "Kirim catatan error" di Pengaturan, melalui aplikasi email milikmu.</p>
 
-<h2>6. Notifikasi pengingat</h2>
+<h2 id="b6">6. Notifikasi pengingat</h2>
 <p>Bila kamu menyalakan pengingat (ditawarkan sekali, bisa dimatikan kapan saja di
 Pengaturan), aplikasi menjadwalkan notifikasi lokal di perangkatmu, misalnya "Hidup Budi
 menunggu" dua hari setelah terakhir main. Jadwal dan isi notifikasi dibuat dan disimpan
@@ -92,31 +176,30 @@ ke atas, izin notifikasi diminta lebih dulu dan bisa dicabut lewat pengaturan pe
 Cloud Messaging. Untuk itu perangkat mendapat token notifikasi dari Google; token ini tidak
 terhubung ke identitasmu. Pengumuman hanya tampil bila izin notifikasi diberikan.</p>
 
-<h2>7. Data tidak dijual</h2>
+<h2 id="b7">7. Data tidak dijual</h2>
 <p>Kami tidak menjual data apa pun. Selain AdMob dan Google Play di atas, aplikasi tidak
 membagikan data kepada pihak ketiga. Google Firebase memproses data untuk kami sebagai
 penyedia layanan, sebagaimana dijelaskan di bagian 5 dan 6.</p>
 
-<h2>8. Anak-anak</h2>
+<h2 id="b8">8. Anak-anak</h2>
 <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah 13 tahun dan mengandung tema
 dewasa yang bersifat satire, termasuk simulasi judi tanpa uang sungguhan. Kami tidak
 dengan sengaja mengumpulkan data dari anak-anak.</p>
 
-<h2>9. Keamanan</h2>
+<h2 id="b9">9. Keamanan</h2>
 <p>Simpanan di perangkat dilindungi tanda keaslian untuk mencegah perubahan. Komunikasi
 iklan dan pembelian dilakukan oleh layanan Google melalui koneksi terenkripsi.</p>
 
-<h2>10. Perubahan kebijakan</h2>
+<h2 id="b10">10. Perubahan kebijakan</h2>
 <p>Kebijakan ini dapat diperbarui seiring perubahan aplikasi. Tanggal berlaku di bagian atas
 akan diperbarui, dan perubahan penting akan diberitahukan di dalam aplikasi atau halaman toko.</p>
 
-<h2>11. Kontak</h2>
+<h2 id="b11">11. Kontak</h2>
 <p>Pertanyaan atau permintaan terkait privasi: <a href="mailto:aldyrains30@gmail.com">aldyrains30@gmail.com</a>.</p>
 
-<hr>
-
-<h1>Privacy Policy (English)</h1>
-<p class="meta">Effective October 17, 2026 · Updated November 20, 2026 · App: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
+<section class="english" id="english" lang="en" aria-labelledby="en-title">
+<h2 class="en-title" id="en-title">Privacy Policy (English)</h2>
+<p class="meta"><span class="mono tag-pill">Effective October 17, 2026</span><span class="mono tag-pill">Updated November 20, 2026</span><span class="mono tag-pill">App: WNI Life Simulator (com.aldiriansyah.wnilife)</span></p>
 <p><strong>No account, no personal data.</strong> The app has no accounts and does not request your
 real name, email, phone number, location, contacts, photos, camera, or microphone.</p>
 <p><strong>Local saves.</strong> Saves, collections, and settings stay on your device. We do not receive or
@@ -149,6 +232,24 @@ other than Google AdMob, Google Play, and Google Firebase (as our service provid
 themes, including simulated gambling with no real money.</p>
 <p><strong>Changes and contact.</strong> This policy may be updated; the effective date above will change.
 Contact: <a href="mailto:aldyrains30@gmail.com">aldyrains30@gmail.com</a>.</p>
+</section>
+    </article>
+  </div>
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="row mono">
+      <span>© 2026 Aldi Riansyah</span>
+      <nav aria-label="Tautan bawah">
+        <a href="/">Beranda</a>
+        <a href="/games/wni-life/">WNI Life Simulator</a>
+        <a href="/myresume/#home">Resume</a>
+        <a href="mailto:aldyrains30@gmail.com">Email</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wordmark" aria-hidden="true">Aldi Riansyah</div>
+</footer>
 </body>
 </html>
