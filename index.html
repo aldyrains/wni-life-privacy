@@ -24,7 +24,7 @@
 <body>
 <main>
 <h1>Kebijakan Privasi WNI Life Simulator</h1>
-<p class="meta">Berlaku sejak 17 Oktober 2026 · Aplikasi: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
+<p class="meta">Berlaku sejak 17 Oktober 2026 · Diperbarui 20 November 2026 · Aplikasi: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
 
 <p>Kebijakan ini menjelaskan data apa yang digunakan oleh permainan WNI Life Simulator
 ("aplikasi") yang dibuat oleh aldyrains ("kami"), dan bagaimana data itu ditangani.</p>
@@ -64,36 +64,59 @@ Aplikasi hanya menerima status pembelian (produk apa yang dimiliki) untuk membuk
 bukan data kartu, rekening, atau identitas pembayaranmu. Status pembelian disimpan di
 perangkat dan dapat dipulihkan dari akun Google Play-mu.</p>
 
-<h2>5. Laporan error</h2>
-<p>Bila aplikasi mengalami error, catatan teknis singkat (waktu, pesan error, dan jejak kode)
-disimpan di perangkat. Catatan ini tidak berisi data pribadi dan tidak pernah dikirim
-otomatis. Catatan hanya terkirim bila kamu sendiri memilih "Kirim catatan error" di
-Pengaturan, melalui aplikasi email milikmu.</p>
+<h2>5. Laporan crash dan analitik (Google Firebase)</h2>
+<p>Untuk menemukan bug dan memahami fitur mana yang dipakai, aplikasi memakai Firebase
+Crashlytics, Firebase Performance Monitoring, dan Google Analytics for Firebase. Layanan ini dapat mengumpulkan dan memproses:</p>
+<ul>
+<li>laporan crash dan error (waktu, pesan error, jejak kode, versi aplikasi),</li>
+<li>informasi perangkat (model, sistem operasi, bahasa, negara),</li>
+<li>data performa (lama aplikasi terbuka, kelancaran layar, waktu permintaan jaringan),</li>
+<li>ID instalasi aplikasi dan, bila diizinkan perangkat, ID iklan,</li>
+<li>pemakaian aplikasi (misalnya membuka aplikasi, memulai atau menamatkan hidup, pembelian
+lewat Google Play).</li>
+</ul>
+<p>Data ini tidak berisi nama asli, email, atau isi simpanan permainanmu. Kamu dapat
+mematikannya kapan saja lewat Pengaturan → Privasi → "Bantu perbaiki game".
+Cara Google menangani data Firebase:
+<a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+<p>Selain itu, catatan error singkat juga disimpan di perangkat dan hanya terkirim bila kamu
+sendiri memilih "Kirim catatan error" di Pengaturan, melalui aplikasi email milikmu.</p>
 
-<h2>6. Data tidak dijual</h2>
+<h2>6. Notifikasi pengingat</h2>
+<p>Bila kamu menyalakan pengingat (ditawarkan sekali, bisa dimatikan kapan saja di
+Pengaturan), aplikasi menjadwalkan notifikasi lokal di perangkatmu, misalnya "Hidup Budi
+menunggu" dua hari setelah terakhir main. Jadwal dan isi notifikasi dibuat dan disimpan
+hanya di perangkat, tanpa server dan tanpa data yang dikirim ke mana pun. Di Android 13
+ke atas, izin notifikasi diminta lebih dulu dan bisa dicabut lewat pengaturan perangkat.</p>
+<p>Aplikasi juga dapat menerima pengumuman (misalnya event atau pembaruan) lewat Firebase
+Cloud Messaging. Untuk itu perangkat mendapat token notifikasi dari Google; token ini tidak
+terhubung ke identitasmu. Pengumuman hanya tampil bila izin notifikasi diberikan.</p>
+
+<h2>7. Data tidak dijual</h2>
 <p>Kami tidak menjual data apa pun. Selain AdMob dan Google Play di atas, aplikasi tidak
-membagikan data kepada pihak ketiga.</p>
+membagikan data kepada pihak ketiga. Google Firebase memproses data untuk kami sebagai
+penyedia layanan, sebagaimana dijelaskan di bagian 5 dan 6.</p>
 
-<h2>7. Anak-anak</h2>
+<h2>8. Anak-anak</h2>
 <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah 13 tahun dan mengandung tema
 dewasa yang bersifat satire, termasuk simulasi judi tanpa uang sungguhan. Kami tidak
 dengan sengaja mengumpulkan data dari anak-anak.</p>
 
-<h2>8. Keamanan</h2>
+<h2>9. Keamanan</h2>
 <p>Simpanan di perangkat dilindungi tanda keaslian untuk mencegah perubahan. Komunikasi
 iklan dan pembelian dilakukan oleh layanan Google melalui koneksi terenkripsi.</p>
 
-<h2>9. Perubahan kebijakan</h2>
+<h2>10. Perubahan kebijakan</h2>
 <p>Kebijakan ini dapat diperbarui seiring perubahan aplikasi. Tanggal berlaku di bagian atas
 akan diperbarui, dan perubahan penting akan diberitahukan di dalam aplikasi atau halaman toko.</p>
 
-<h2>10. Kontak</h2>
+<h2>11. Kontak</h2>
 <p>Pertanyaan atau permintaan terkait privasi: <a href="mailto:aldyrains30@gmail.com">aldyrains30@gmail.com</a>.</p>
 
 <hr>
 
 <h1>Privacy Policy (English)</h1>
-<p class="meta">Effective October 17, 2026 · App: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
+<p class="meta">Effective October 17, 2026 · Updated November 20, 2026 · App: WNI Life Simulator (com.aldiriansyah.wnilife)</p>
 <p><strong>No account, no personal data.</strong> The app has no accounts and does not request your
 real name, email, phone number, location, contacts, photos, camera, or microphone.</p>
 <p><strong>Local saves.</strong> Saves, collections, and settings stay on your device. We do not receive or
@@ -106,10 +129,22 @@ Banner and full-screen ads are removed for Sultan Pack owners. See
 <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from partner apps</a>.</p>
 <p><strong>Purchases (Google Play).</strong> Payments are processed entirely by Google Play. The app only
 receives purchase status to unlock content, never card or account details.</p>
-<p><strong>Error reports.</strong> Short technical error notes are stored on the device without personal
-data and are only sent if you choose "Send error notes" in Settings, using your own email app.</p>
+<p><strong>Crash reports and analytics (Google Firebase).</strong> The app uses Firebase Crashlytics, Firebase
+Performance Monitoring, and Google Analytics for Firebase to find bugs and understand which features are used. They may collect crash
+and error reports, device information (model, OS, language, country), performance data (app start time, screen
+smoothness, network request timing), the app instance ID and, where the
+device allows, the advertising ID, and app usage (e.g. app opens, starting or finishing a life, Google Play
+purchases). This data does not include your real name, email, or game saves. You can turn it off at any time
+in Settings → Privacy → "Help improve the game". See
+<a href="https://firebase.google.com/support/privacy">Firebase privacy</a>. Short error notes are also stored
+on the device and only sent if you choose "Send error notes" in Settings, using your own email app.</p>
+<p><strong>Reminder notifications.</strong> If you turn reminders on (offered once, can be switched off in
+Settings), the app schedules local notifications on your device. Their schedule and text stay on the device;
+nothing is sent to a server. On Android 13+ the notification permission is requested first. The app may also
+receive announcements through Firebase Cloud Messaging, which gives the device a notification token not linked
+to your identity; announcements only appear if notifications are allowed.</p>
 <p><strong>No selling of data.</strong> We do not sell any data, and no data is shared with third parties
-other than Google AdMob and Google Play as described above.</p>
+other than Google AdMob, Google Play, and Google Firebase (as our service provider) as described above.</p>
 <p><strong>Children.</strong> The app is not directed to children under 13 and contains satirical mature
 themes, including simulated gambling with no real money.</p>
 <p><strong>Changes and contact.</strong> This policy may be updated; the effective date above will change.
